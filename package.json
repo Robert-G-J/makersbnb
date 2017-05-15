@@ -4,6 +4,7 @@
   "description": "Description ----------- Makersbnb allows you to book rooms to stay and advertise your own rooms to others.",
   "main": "index.js",
   "scripts": {
+    "start:dev": "nodemon ./bin/www",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
