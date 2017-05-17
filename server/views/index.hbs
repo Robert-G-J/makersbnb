@@ -1,0 +1,10 @@
+<h1>MakersBNB Listings:</h1>
+
+<a href="/listings/new">Post your own listing here</a>
+
+{{#each listings}}
+  <p> 
+    <b>{{this.title}}:</b></br>
+    {{this.details}}
+  </p>
+{{/each}}
