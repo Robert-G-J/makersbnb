@@ -1,11 +1,17 @@
-//Express, handlebars, middleware, sequelize, and app variable assignment.
+//Express, middleware
 const express = require('express');
-const exphbs  = require('express-handlebars');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
+
+//Template rendering
+const exphbs  = require('express-handlebars');
+
+//Path
 const path = require('path');
-const db = require('./server/models/index');
+
+//Important variable assignments
 const app = express();
+const db = require('./server/models/index');
 const Listing = db.sequelize.import(__dirname + '/server/models/listing');
 
 //Template Rendering settings
