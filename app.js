@@ -32,7 +32,7 @@ var makersbnbListings;
 app.get('/', (req, res) => {
   res.redirect('/listings');
 });
-    
+
 app.get('/listings', (req, res) => {
   Listing.all().then(listings => {
     makersbnbListings = listings;
@@ -55,6 +55,14 @@ app.post('/listings/new', (req, res) => {
     .then(function() {
       res.redirect('/listings');
     });
+
+  // app.post('/listings', (req, res) => {
+  // //   Listing.destroy({
+  // //   })
+  // // })
+  // //   .then(function() {
+  // //     res.redirect('/listings');
+  // //   });
 });
 
 module.exports = app;

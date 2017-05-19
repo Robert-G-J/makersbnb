@@ -1,5 +1,4 @@
 <head>
-  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
   <link rel="stylesheet" type="text/css" href="/css/styles.css" >
 </head>
 <body>
@@ -19,9 +18,12 @@
 	{{this.details}}</br>
 Location: {{this.location}}
 </p>
-<form>
+
+<div>
+<form action='/listing' method='post'>
   <input type="submit" value="Delete listing">
 </form>
+</div
     {{/each}}
 
 
