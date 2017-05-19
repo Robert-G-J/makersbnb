@@ -32,7 +32,7 @@ var makersbnbListings;
 app.get('/', (req, res) => {
   res.redirect('/listings');
 });
-    
+
 app.get('/listings', (req, res) => {
   Listing.all().then(listings => {
     makersbnbListings = listings;
@@ -51,11 +51,22 @@ app.post('/listings/new', (req, res) => {
     title: req.body.title,
     details: req.body.details,
     location: req.body.location,
-    booking_date: req.body.booking_date,
   })
     .then(function() {
       res.redirect('/listings');
     });
+});
+
+app.post('/listings/book/:listingId', (req, res) => {
+
+    Listing.update( {
+      booking_date: req.body.booking_date
+    },
+    {where: { id: req.params.listingId}})
+
+  .then( function(){
+    res.redirect('/listings');
+  })
 });
 
 module.exports = app;
