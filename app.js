@@ -1,5 +1,3 @@
-"use strict"
-
 //Express, middleware
 const express = require('express');
 const logger = require('morgan');
