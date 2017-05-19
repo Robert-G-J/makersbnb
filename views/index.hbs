@@ -16,8 +16,13 @@
       <p>
 	<b>{{this.title}}:</b></br>
 	{{this.details}}</br>
-Location: {{this.location}}
-</p>
+	Location: {{this.location}}</br>
+	<form method="post" action="/listings/book/{{this.id}}">
+	  <input name ="date" type="text">
+	  <input type="submit" value="Book Now">
+	</form>
+      </p>
     {{/each}}
+
   </div>
 </body>

@@ -15,6 +15,7 @@ module.exports = (sequelize, DataTypes) => {
     booking_date: {
       type: DataTypes.DATEONLY,
       allowNull: true,
+    },
   }, {
     classMethods: {
       associate: (models) => {
