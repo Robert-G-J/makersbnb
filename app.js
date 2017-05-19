@@ -51,6 +51,7 @@ app.post('/listings/new', (req, res) => {
     title: req.body.title,
     details: req.body.details,
     location: req.body.location,
+    booking_date: req.body.booking_date,
   })
     .then(function() {
       res.redirect('/listings');
