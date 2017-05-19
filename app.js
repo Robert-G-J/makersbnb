@@ -4,7 +4,7 @@ const logger = require('morgan');
 const bodyParser = require('body-parser');
 
 //Template rendering
-const exphbs  = require('express-handlebars');
+const exphbs = require('express-handlebars');
 
 //Path
 const path = require('path');
@@ -21,7 +21,9 @@ app.set('view engine', 'hbs');
 //Middleware settings
 app.use(logger('dev'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended:false }));
+app.use(bodyParser.urlencoded({
+  extended: false
+}));
 app.use(express.static('public'));
 
 //Sequelize data assignment
@@ -34,10 +36,12 @@ app.get('/', (req, res) => {
 
 app.get('/listings', (req, res) => {
   Listing.all().then(listings => {
-    makersbnbListings = listings;
-  })
+      makersbnbListings = listings;
+    })
     .then(function() {
-      res.render('index', {listings: makersbnbListings});
+      res.render('index', {
+        listings: makersbnbListings
+      });
     });
 });
 
@@ -47,10 +51,21 @@ app.get('/listings/new', (req, res) => {
 
 app.post('/listings/new', (req, res) => {
   Listing.create({
-    title: req.body.title,
-    details: req.body.details,
-    location: req.body.location,
-  })
+      title: req.body.title,
+      details: req.body.details,
+      location: req.body.location,
+    })
+    .then(function() {
+      res.redirect('/listings');
+    });
+});
+
+app.post('/listings/delete', (req, res) => {
+  Listing.destroy({
+      where: {
+        id: req.body.id
+      }
+    })
     .then(function() {
       res.redirect('/listings');
     });
