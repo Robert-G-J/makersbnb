@@ -1,6 +1,7 @@
 <head>
-  <link rel="stylesheet" type="text/css" href="/css/styles.css" >
+  <link rel="stylesheet" type="text/css" href="/css/styles.css">
 </head>
+
 <body>
   <header>
     <a href="#" class="header-link">A link</a>
@@ -14,10 +15,18 @@
 
     {{#each listings}}
       <p>
-	<b>{{this.title}}:</b></br>
-	{{this.details}}</br>
-Location: {{this.location}}
-</p>
+        <b>{{this.title}}:</b></br>
+        {{this.details}}</br>
+        Location: {{this.location}}
+      </p>
+      <div>
+        <form action='listings/delete' method='post'>
+          <input type="hidden" name="id" value="{{this.id}}">
+          <input type="submit" value="Delete listing">
+        </form>
+      </div>
     {{/each}}
+
+
   </div>
 </body>
