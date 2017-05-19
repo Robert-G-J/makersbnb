@@ -8,6 +8,10 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.TEXT,
       allowNull: false,
     },
+    location: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
   }, {
     classMethods: {
       associate: (models) => {
