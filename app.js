@@ -17,12 +17,13 @@ const Listing = db.sequelize.import(__dirname + '/server/models/listing');
 //Template Rendering settings
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'hbs');
-app.set('views', path.join(__dirname,'server/views'));
+//app.set('views', path.join(__dirname,'views'));
 
 //Middleware settings
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended:false }));
+app.use(express.static('public'));
 
 //Sequelize data assignment
 var makersbnbListings;

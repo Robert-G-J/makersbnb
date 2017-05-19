@@ -1,0 +1,22 @@
+<head>
+  <link rel="stylesheet" type="text/css" href="/css/styles.css" >
+</head>
+<body>
+  <header>
+    <a href="#" class="header-link">A link</a>
+    <a href="#" class="header-link">Another link</a>
+    <a href="#" class="header-link">A third link</a>
+    <a href="#" class="header-link">A for-good-measure link</a>
+  </header>
+  <div class="main-content">
+    <h1>MakersBNB Listings:</h1>
+    <a id="post-listing" href="/listings/new">Post your own listing here</a>
+
+    {{#each listings}}
+      <p>
+	<b>{{this.title}}:</b></br>
+	{{this.details}}
+      </p>
+    {{/each}}
+  </div>
+</body>
