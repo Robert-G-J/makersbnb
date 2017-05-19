@@ -17,7 +17,6 @@ const Listing = db.sequelize.import(__dirname + '/server/models/listing');
 //Template Rendering settings
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'hbs');
-//app.set('views', path.join(__dirname,'views'));
 
 //Middleware settings
 app.use(logger('dev'));
