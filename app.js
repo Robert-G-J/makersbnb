@@ -15,7 +15,7 @@ const db = require('./server/models/index');
 const Listing = db.sequelize.import(__dirname + '/server/models/listing');
 
 //Template Rendering settings
-app.engine('handlebars', exphbs({defaultLayout: 'main'}));
+app.engine('handlebars', exphbs);
 app.set('view engine', 'hbs');
 
 //Middleware settings
@@ -58,14 +58,13 @@ app.post('/listings/new', (req, res) => {
 
 app.post('/listings/book/:listingId', (req, res) => {
 
-    Listing.update( {
-      booking_date: req.body.booking_date
-    },
+  Listing.update( {
+    booking_date: req.body.booking_date
+  },
     {where: { id: req.params.listingId}})
-
-  .then( function(){
-    res.redirect('/listings');
-  })
+    .then( function(){
+      res.redirect('/listings');
+    });
 });
 
 module.exports = app;
