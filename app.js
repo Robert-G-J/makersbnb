@@ -50,6 +50,7 @@ app.post('/listings/new', (req, res) => {
   Listing.create({
     title: req.body.title,
     details: req.body.details,
+    location: req.body.location,
   })
     .then(function() {
       res.redirect('/listings');
