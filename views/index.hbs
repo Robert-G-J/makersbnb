@@ -15,18 +15,25 @@
 
     {{#each listings}}
       <p>
-        <b>{{this.title}}:</b></br>
-        {{this.details}}</br>
-        Location: {{this.location}}
-      </p>
-      <div>
-        <form action='listings/delete' method='post'>
-          <input type="hidden" name="id" value="{{this.id}}">
-          <input type="submit" value="Delete listing">
+      <b>{{this.title}}:</b></br>
+      {{this.details}}</br>
+      Location: {{this.location}}<br>
+      {{#if this.booking_date }}
+        This property is booked for {{this.booking_date}}.
+      {{else}}
+        Enter a date, format: yyyy-mm-dd
+        <form method="post" action="/listings/book/{{this.id}}">
+          <input name ="booking_date" type="text" required pattern="(?:19|20)(?:(?:[13579][26]|[02468][048])-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))|(?:[0-9]{2}-(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-8])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:29|30))|(?:(?:0[13578]|1[02])-31)))">
+          <input type="submit" value="Book Now">
         </form>
-      </div>
+      {{/if}}
+        <div>
+          <form action='listings/delete' method='post'>
+            <input type="hidden" name="id" value="{{this.id}}">
+            <input type="submit" value="Delete listing">
+          </form      
+        </div>
+      </p>
     {{/each}}
-
-
   </div>
 </body>

@@ -15,11 +15,8 @@ const db = require('./server/models/index');
 const Listing = db.sequelize.import(__dirname + '/server/models/listing');
 
 //Template Rendering settings
-app.engine('handlebars', exphbs({
-  defaultLayout: 'main'
-}));
+app.engine('handlebars', exphbs);
 app.set('view engine', 'hbs');
-//app.set('views', path.join(__dirname,'views'));
 
 //Middleware settings
 app.use(logger('dev'));
@@ -70,6 +67,17 @@ app.post('/listings/delete', (req, res) => {
       }
     })
     .then(function() {
+      res.redirect('/listings');
+    });
+});
+
+app.post('/listings/book/:listingId', (req, res) => {
+
+  Listing.update( {
+    booking_date: req.body.booking_date
+  },
+    {where: { id: req.params.listingId}})
+    .then( function(){
       res.redirect('/listings');
     });
 });
