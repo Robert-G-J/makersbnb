@@ -32,6 +32,7 @@ Option 2: Host it locally: `npm run start:dev`
 2. Sequelize: We did not find the documentation beginner-friendly. Sequelize was also our first experience working with callbacks and promises.
 3. Handlebars templating: In the end, we could not configure a custom helper to fix the formatting of booking dates on the page.
 4. Github collaboration: This was our first real experience with issues, branches, and code reviews.
+5. Testing: We spent ~6 hours trying to set up front-end testing, but couldn't get it working.
 
 ## Collaborators
 
