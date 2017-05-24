@@ -9,16 +9,10 @@ Users can create, book, and destroy listings.
 
 ## Installation
 
-Node:
-If you haven't installed Node, we recommend using [nvm](https://github.com/creationix/nvm).
+This assumes you have Node and PostgreSQL installed:
 
-Project files:
 1. `git clone git@github.com:Robert-G-J/makersbnb.git`.
 2. `cd path/to/dir` then `npm install`.
-
-PostgreSQL:
-1. Install PostgreSQL (instructions [here](https://www.postgresql.org/download/)).
-2. Initialize database: `cd path/to/makersbnb/dir` then `sequelize db:migrate`.
 
 ## Usage
 

@@ -13,6 +13,7 @@ body {
 header {
   width: 100vw;
   height: 5vh;
+  min-height: 35px;
   display: flex;
   flex-direction: row;
   background-color: white;
@@ -22,8 +23,7 @@ header {
 }
 .header-link, #post-listing {
   opacity: 1;
-  padding: 3px 16px;	
-  line-height: 27px;
+  padding: 0.25vh 1.5vh;	
   border: 1px solid #f2f2f2;
   background-color: #f2f2f2;
   color: #57575;

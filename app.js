@@ -35,7 +35,8 @@ app.get('/', (req, res) => {
 });
 
 app.get('/listings', (req, res) => {
-  Listing.all().then(listings => {
+  Listing.all()
+    .then(listings => {
       makersbnbListings = listings;
     })
     .then(function() {
